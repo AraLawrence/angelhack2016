@@ -18,6 +18,15 @@ class AngelhackApp extends Component {
         return <IndexView navigator={navigator}/>
       case 'HistoryView':
         return <HistoryView navigator={navigator}/>
+      case 'HistoryView':
+        return <HistoryView navigator={navigator}/>
+      case 'HistoryView':
+        return <HistoryView navigator={navigator}/>
+      case 'HistoryView':
+        return <HistoryView navigator={navigator}/>
+      case 'HistoryView':
+        return <HistoryView navigator={navigator}/>
+
     }
   }
 

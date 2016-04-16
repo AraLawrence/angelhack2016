@@ -3,23 +3,31 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
 class HistoryView extends Component {
+  constructor(props) {
+    super(props);
+    this.onButtonPress = () => {
+      this.props.navigator.pop();
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Your History
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.onButtonPress}>
+          <View>
+            <Text style={styles.button}>Back to home</Text>
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -30,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
@@ -41,6 +49,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  button: {
+    backgroundColor: 'rgba(181, 165, 165, 0.79)'
   },
 });
 
