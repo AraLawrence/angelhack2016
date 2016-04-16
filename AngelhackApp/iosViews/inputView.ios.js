@@ -3,6 +3,7 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TextInput,
   TouchableHighlight,
   View
 } from 'react-native';
@@ -10,11 +11,17 @@ import React, {
 class InputView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      upc: '',
+    };
     this.onCameraPress = () => {
       this.props.navigator.push({name: 'CameraView'});
     };
     this.onHistoryPress = () => {
       this.props.navigator.pop();
+    };
+    this.onSubmitPress = () => {
+      // do something
     };
   }
 
@@ -24,6 +31,19 @@ class InputView extends Component {
         <Text style={styles.welcome}>
           Input View!
         </Text>
+        <TextInput
+          placeholder="UPC"
+          style={styles.inputBox}
+          onChangeText={(upc) => this.setState({upc})}
+          value={this.state.nameText}
+        />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.onSubmitPress}>
+          <View>
+            <Text style={styles.button}>Check</Text>
+          </View>
+        </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
           onPress={this.onCameraPress}>
@@ -59,6 +79,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  inputBox: {
+    height: 40,
+    width: 200,
+    alignSelf: 'center',
+    borderWidth: 1,
   },
   button: {
     backgroundColor: 'rgba(181, 165, 165, 0.79)'

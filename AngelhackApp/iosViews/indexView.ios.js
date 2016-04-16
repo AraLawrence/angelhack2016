@@ -13,7 +13,8 @@ class IndexView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomProp: '',
+      nameText: '',
+      emailText: '',
     };
     this.onButtonPress = () => {
       this.props.navigator.push({name: 'HistoryView'});
@@ -42,7 +43,7 @@ class IndexView extends Component {
         <TextInput
           placeholder="Password"
           style={styles.inputBox}
-          onChangeText={(lastNameText) => this.setState({lastNameText})}
+          onChangeText={(emailText) => this.setState({emailText})}
           value={this.state.lastNameText}
         />
         <TouchableHighlight
