@@ -11,7 +11,7 @@ class HistoryView extends Component {
   constructor(props) {
     super(props);
     this.onButtonPress = () => {
-      this.props.navigator.pop();
+      this.props.navigator.push({name: 'InputView'});
     };
   }
 
@@ -25,7 +25,7 @@ class HistoryView extends Component {
           style={styles.button}
           onPress={this.onButtonPress}>
           <View>
-            <Text style={styles.button}>Back to home</Text>
+            <Text style={styles.button}>Input</Text>
           </View>
         </TouchableHighlight>
       </View>
