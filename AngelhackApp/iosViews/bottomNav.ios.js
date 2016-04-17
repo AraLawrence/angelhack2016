@@ -1,6 +1,7 @@
 import React, {
   AppRegistry,
   Component,
+  Image,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -26,27 +27,31 @@ class BottomNav extends Component {
       <View style={styles.container}>
         <TouchableHighlight style={styles.navButton}
           onPress={this.onHomePress}>
-          <View>
-            <Text style={styles.button}>Home</Text>
-          </View>
+          <Image
+            style={styles.logo}
+            source={require('../assets/home_125.png')}
+          />
         </TouchableHighlight>
         <TouchableHighlight style={styles.navButton}
           onPress={this.onInventoryPress}>
-          <View>
-            <Text style={styles.button}>Inventory</Text>
-          </View>
+          <Image
+            style={styles.logo}
+            source={require('../assets/inventory_125.png')}
+          />
         </TouchableHighlight>
         <TouchableHighlight style={styles.navButton}
           onPress={this.onButtonPress}>
-          <View>
-            <Text style={styles.button}>Search</Text>
-          </View>
+          <Image
+            style={styles.logo}
+            source={require('../assets/profile_125.png')}
+          />
         </TouchableHighlight>
         <TouchableHighlight style={styles.navButton}
           onPress={this.onButtonPress}>
-          <View>
-            <Text style={styles.button}>Profile</Text>
-          </View>
+          <Image
+            style={styles.logo}
+            source={require('../assets/search_125.png')}
+          />
         </TouchableHighlight>
       </View>
     );
@@ -72,9 +77,12 @@ const styles = StyleSheet.create({
     height: 110,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 1
-  }
+    borderTopWidth: 1,
+    borderColor: 'grey'
+  },
+  // logo: {
+  //   width: 20
+  // }
 });
 
 module.exports = BottomNav;

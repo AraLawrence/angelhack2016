@@ -1,6 +1,7 @@
 import React, {
   AppRegistry,
   Component,
+  Image,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -18,12 +19,10 @@ class PageHeader extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight
-          onPress={this.onButtonPress}>
-          <View>
-            <Text style={styles.button}>BACK</Text>
-          </View>
-        </TouchableHighlight>
+        <Image
+          style={styles.logo}
+          source={require('../assets/logo.png')}
+        />
       </View>
     );
   }
@@ -44,6 +43,10 @@ const styles = StyleSheet.create({
   button: {
     paddingTop: 12,
     marginLeft: 20
+  },
+  logo: {
+    marginTop: 90,
+    alignSelf: 'center'
   }
 });
 

@@ -10,10 +10,10 @@ class SetMatch extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
+        <Text style={styles.textStyle}>
           {this.props.placeName}
         </Text>
-        <Text>
+        <Text style={styles.textStyle}>
           {this.props.status}
         </Text>
       </View>
@@ -26,11 +26,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'stretch',
-    height: 40,
+    height: 60,
     backgroundColor: '#F5FCFF',
     borderWidth: 1,
     borderColor: 'grey'
   },
+  textStyle: {
+    fontSize: 20
+  }
 });
 
 module.exports = SetMatch;

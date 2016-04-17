@@ -48,7 +48,7 @@ class InputView extends Component {
         .then((serverResponse) => {
           let currentItem = JSON.parse(serverResponse);
           console.log(currentItem.attributes.Brand);
-          this.setState({item: currentItem.attributes.Brand + " " + currentItem.attributes["Net Weight"], qty:"1"})
+          this.setState({item: currentItem.attributes.Brand + " " + currentItem.attributes["Net Weight"], qty:"qty: 1"})
         })
         .catch((error) => {
           console.warn(error);
@@ -105,10 +105,10 @@ class InputView extends Component {
         </View>
         <ItemAdded item={this.state.item} qty={this.state.qty}/>
         <TouchableHighlight
-          style={styles.button}
+          style={styles.completeButton}
           onPress={this.onMatchPress}>
           <View>
-            <Text style={styles.button}>MATCH!</Text>
+            <Text style={styles.completeText}>Complete</Text>
           </View>
         </TouchableHighlight>
         <View style={styles.bottom}>
@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f3f5",
   },
   welcome: {
+    marginTop: 60,
     fontFamily: 'Helvetica Neue',
     fontSize: 20,
     textAlign: 'center',
@@ -155,18 +156,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   scan: {
-    backgroundColor: 'black',
+    backgroundColor: '#85A0A8',
     color: 'white'
   },
   scanButton: {
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: '#85A0A8',
     width: 170
   },
   camButton: {
     marginTop: 20,
     marginLeft: 10,
-    backgroundColor: 'black',
+    backgroundColor: '#85A0A8',
+    color: 'white'
+  },
+  completeButton: {
+    width: 120,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    backgroundColor: '#85A0A8',
+  },
+  completeText: {
+    fontSize: 20,
     color: 'white'
   },
   bottom: {

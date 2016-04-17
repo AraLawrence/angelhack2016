@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f3f5",
   },
   welcome: {
+    marginTop: 90,
     fontSize: 20,
     fontFamily: 'Helvetica Neue',
     textAlign: 'center',

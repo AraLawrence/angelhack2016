@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    marginTop: 75,
     fontFamily: "Helvetica Neue",
     textAlign: 'center',
     margin: 10,

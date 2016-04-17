@@ -1,6 +1,7 @@
 import React, {
   AppRegistry,
   Component,
+  Image,
   Navigator,
   StyleSheet,
   Text,
@@ -24,17 +25,21 @@ class IndexView extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={require('../assets/logo.png')}
+        />
         <Text style={styles.welcome}>
           SIGN IN / REGISTER
         </Text>
         <TextInput
-          placeholder="FULL NAME"
+          placeholder="EMAIL"
           style={styles.inputBox}
           onChangeText={(nameText) => this.setState({nameText})}
           value={this.state.nameText}
         />
         <TextInput
-          placeholder="EMAIL"
+          placeholder="PASSWORD"
           style={styles.inputBox}
           onChangeText={(emailText) => this.setState({emailText})}
           value={this.state.lastNameText}
@@ -56,6 +61,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: "#f0f3f5"
+  },
+  logo: {
+    marginTop: 30
   },
   welcome: {
     fontFamily: "Helvetica Neue",
@@ -81,7 +89,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 30,
-    backgroundColor: 'black',
+    backgroundColor: '#85A0A8',
     width: 300,
     height: 40,
     alignItems: 'center',

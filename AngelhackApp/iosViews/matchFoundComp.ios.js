@@ -12,6 +12,7 @@ class MatchFound extends Component {
     super(props);
 
     this.onSubmitPress = () => {
+      // Here we should post order status to db
       this.props.navigator.push({name: 'HistoryView', placeName: this.props.place, status: "pending"});
     }
   }
@@ -20,9 +21,6 @@ class MatchFound extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.head}>
-          Hi!
-        </Text>
-        <Text >
           {this.props.place}
         </Text>
         <Text >
@@ -30,14 +28,15 @@ class MatchFound extends Component {
         </Text>
         <View style={styles.bottom}>
           <View style={styles.bottomContainer}>
-            <View style={styles.bottomBox}>
-              <Text>Reject</Text>
+            <View style={styles.bottomBoxLeft}>
+              <Text style={styles.boldText}>No</Text>
             </View>
-            <View style={styles.bottomBox}>
+            <View style={styles.bottomBoxRight}>
               <TouchableHighlight
-                onPress={this.onSubmitPress}>
+                onPress={this.onSubmitPress}
+                style={this.matchElement}>
                 <View>
-                  <Text>submit</Text>
+                  <Text style={styles.boldText}>Yes</Text>
                 </View>
               </TouchableHighlight>
             </View>
@@ -73,11 +72,30 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     flexDirection: 'row',
   },
-  bottomBox: {
+  matchElement: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bottomBoxLeft: {
     width: 124,
     height: 40,
+    backgroundColor: "rgb(238, 99, 132)",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'grey'
+  },
+  bottomBoxRight: {
+    width: 124,
+    height: 40,
+    backgroundColor: "rgb(62, 215, 142)",
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'grey'
+  },
+  boldText: {
+    fontWeight: 'bold'
   }
 });
 
