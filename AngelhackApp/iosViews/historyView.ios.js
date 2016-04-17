@@ -33,6 +33,9 @@ class HistoryView extends Component {
           <Text style={styles.welcome}>
             HOME
           </Text>
+          <Text>
+            Add an order +
+          </Text>
           <View style={styles.bottom}>
             <BottomNav navigator={this.props.navigator}/>
           </View>
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'flex-end'
-  }
+  },
 });
 
 module.exports = HistoryView;

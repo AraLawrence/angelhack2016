@@ -39,23 +39,38 @@ class InputView extends Component {
 
       let url = `https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1?apikey=${HPE_KEY}&url=${image}`;
 
-      // fetch(url)
-      // .then((response) => response.text())
-      // .then((responseText) => {
-      //   console.log(responseText)
-      //   this.props.navigator.push({nane: 'ResultMatchView'})
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
-      this.setState({item:"Small bag of Lays bbq potato chips", qty:5})
+      fetch(url)
+      .then((response) => response.text())
+      .then((responseText) => {
+        let hpeResponse = JSON.parse(responseText)
+        fetch(`http://localhost:3000/item/scan?q=${hpeResponse.barcode[0].text}`)
+        .then((response) => response.text())
+        .then((serverResponse) => {
+          let currentItem = JSON.parse(serverResponse);
+          console.log(currentItem.attributes.Brand);
+          this.setState({item: currentItem.attributes.Brand + " " + currentItem.attributes["Net Weight"], qty:"1"})
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
     };
+
     this.onMatchPress = () => {
-      console.log("nothing here yet");
-      // API_TODO this button should run the match algorithm and then render the
-      // match screen which I have yet to build
-      this.setState({place:"Mary's Place", qty:"20/25"});
-      this.props.navigator.push({name: 'MatchView', place: this.state.place, qty: this.state.qty});
+      fetch(`http://localhost:3000/find_matching_charities`)
+      .then((response) => response.text())
+      .then((serverResponse) => {
+        let findResponse = JSON.parse(serverResponse);
+        let place = findResponse.matches;
+        for(key in place) {
+          console.log(key);
+          place = key;
+        }
+        this.props.navigator.push({name: 'MatchView', place: place, qty: "1/25"});
+      })
     }
   }
 

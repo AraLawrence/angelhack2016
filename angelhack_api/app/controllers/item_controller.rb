@@ -2,7 +2,7 @@ class ItemController < ApplicationController
 
 
   def scan
-  	
+
 
 	# key = ENV['API_KEY']
 	# secret = ENV['SECRET']
@@ -15,14 +15,20 @@ class ItemController < ApplicationController
 	# puts productsHash.to_json
 	# render json: productsHash.to_json
 
-  	barcode = '0071641818033'
+  	barcode = params["q"]
+    puts barcode
   	base_url = 'https://api.outpan.com/v2/products/' + barcode
   	response = RestClient.get base_url, {
   		:params => {
   			:apikey => ENV['OUTPAN_KEY']
   		}
   	}
+
+    response = JSON.parse(response)
+    user = User.first
+    inventory = Inventory.find_by({user_id: user.id})
+    inventory.inventory_items.find_or_create_by({name: response["attributes"]["Brand"], category_id: 5})
   	render json: response
-  	
+
   end
 end
