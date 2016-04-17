@@ -21,7 +21,9 @@ class InputView extends Component {
       this.props.navigator.pop();
     };
     this.onSubmitPress = () => {
-      // do something
+      let oReq = new XMLHttpRequest();
+      oReq.open("POST", "http://localhost:3000/user/create", true);
+      oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     };
   }
 
