@@ -3,22 +3,35 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
 class BottomNav extends Component {
+  constructor(props) {
+    super(props);
+    this.onButtonPress = () => {
+      this.props.navigator.pop();
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <TouchableHighlight style={styles.navButton}
+          onPress={this.onButtonPress}>
+          <View>
+            <Text style={styles.button}>INPUT</Text>
+          </View>
+        </TouchableHighlight>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Wel
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+        <Text style={styles.welcome}>
+          Wel
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <Text style={styles.welcome}>
+          Wel
         </Text>
       </View>
     );
@@ -27,9 +40,11 @@ class BottomNav extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 110,
     justifyContent: 'center',
-    alignItems: 'center',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -37,11 +52,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  navButton: {
+    flex: 1,
+    borderColor: 'black',
+    borderWidth: 1
+  }
 });
 
 module.exports = BottomNav;

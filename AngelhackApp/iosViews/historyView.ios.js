@@ -7,6 +7,7 @@ import React, {
   View
 } from 'react-native';
 import PageHeader from './pageHeader.ios.js';
+import BottomNav from './bottomNav.ios.js';
 
 class HistoryView extends Component {
   constructor(props) {
@@ -40,6 +41,9 @@ class HistoryView extends Component {
             <Text style={styles.button}>INPUT</Text>
           </View>
         </TouchableHighlight>
+        <View style={styles.bottom}>
+          <BottomNav navigator={this.props.navigator}/>
+        </View>
       </View>
     );
   }
@@ -60,6 +64,11 @@ const styles = StyleSheet.create({
   button: {
       backgroundColor: 'rgba(181, 165, 165, 0.79)'
   },
+  bottom: {
+    flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'flex-end'
+  }
 });
 
 module.exports = HistoryView;
