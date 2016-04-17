@@ -26,6 +26,10 @@ class InputView extends Component {
       this.props.navigator.pop();
     };
     this.onSubmitPress = () => {
+      // API_TODO on successful submit here we will want to add to db and then render a Component
+      // that contains the amount and right now I am directing to OrderListView, if possible
+      // we should add a modal rather than that
+
       let url = `https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1?apikey=${HPE_KEY}&url=${image}`;
 
       fetch(url)
@@ -38,6 +42,11 @@ class InputView extends Component {
         console.warn(error);
       });
     };
+    this.onMatchPress = () => {
+      console.log("nothing here yet");
+      // API_TODO this button should run the match algorithm and then render the
+      // match screen which I have yet to build
+    }
   }
 
   render() {
@@ -71,6 +80,13 @@ class InputView extends Component {
           onPress={this.onHistoryPress}>
           <View>
             <Text style={styles.button}>Back to history</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.onMatchPress}>
+          <View>
+            <Text style={styles.button}>MATCH!</Text>
           </View>
         </TouchableHighlight>
       </View>

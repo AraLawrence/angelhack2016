@@ -10,12 +10,22 @@ import React, {
 class HistoryView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userHistory: '',
+    };
     this.onButtonPress = () => {
       this.props.navigator.push({name: 'InputView'});
     };
+    this.loadHistory = () => {
+      console.log("loading history");
+      // API_TODO this is where we will get the users history and store it in the
+      // state variable that I have defined above. We will need to create a Component
+      // for this, which gets loaded on the function call 
+    }
   }
 
   render() {
+    this.loadHistory();
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

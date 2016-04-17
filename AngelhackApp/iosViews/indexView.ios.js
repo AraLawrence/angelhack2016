@@ -20,11 +20,7 @@ class IndexView extends Component {
       this.props.navigator.push({name: 'HistoryView'});
     };
   }
-
-  componentWillMount() {
-    console.log(this.props.navigator);
-  }
-
+  
   render() {
     return (
       <View style={styles.container}>
