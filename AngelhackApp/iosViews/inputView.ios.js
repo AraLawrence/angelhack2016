@@ -31,16 +31,17 @@ class InputView extends Component {
       // we should add a modal rather than that
 
       let url = `https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1?apikey=${HPE_KEY}&url=${image}`;
+      this.props.navigator.push({name: 'ResultMatchView'})
 
-      fetch(url)
-      .then((response) => response.text())
-      .then((responseText) => {
-        console.log(responseText)
-        this.props.navigator.push({nane: 'ResultMatchView'})
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+      // fetch(url)
+      // .then((response) => response.text())
+      // .then((responseText) => {
+      //   console.log(responseText)
+      //   this.props.navigator.push({nane: 'ResultMatchView'})
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
     };
     this.onMatchPress = () => {
       console.log("nothing here yet");
