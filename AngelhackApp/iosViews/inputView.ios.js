@@ -9,7 +9,9 @@ import React, {
 } from 'react-native';
 
 import HPE_KEY from '../keys/keys.js';
-var image = require('../assets/sample_upc.jpg');
+
+// read image here from imgur upload, later access from camera roll
+var image = "http://i.imgur.com/0Qiy5I7.jpg"
 
 class InputView extends Component {
   constructor(props) {
@@ -24,12 +26,13 @@ class InputView extends Component {
       this.props.navigator.pop();
     };
     this.onSubmitPress = () => {
-      let url = `https://api.havenondemand.com/1/api/async/recognizebarcodes/v1?apikey=${HPE_KEY}&file=${image}`;
+      let url = `https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1?apikey=${HPE_KEY}&url=${image}`;
 
       fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
-        console.log(responseText);
+        console.log(responseText)
+        this.props.navigator.push('OrderListView')
       })
       .catch((error) => {
         console.warn(error);

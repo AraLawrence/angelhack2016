@@ -14,6 +14,7 @@ import InputView from './iosViews/inputView.ios.js';
 import CameraView from './iosViews/cameraView.ios.js';
 import ResultMatchView from './iosViews/resultMatchView.ios.js';
 import ResultNoneView from './iosViews/resultNoneView.ios.js';
+import OrderListView from './iosViews/orderListView.ios.js';
 
 class AngelhackApp extends Component {
   renderScene(route, navigator) {
@@ -30,6 +31,8 @@ class AngelhackApp extends Component {
         return <ResultMatchView navigator={navigator}/>
       case 'ResultNoneView':
         return <ResultNoneView navigator={navigator}/>
+      case 'OrderListView':
+        return <OrderListView navigator={navigator}/>
 
     }
   }
