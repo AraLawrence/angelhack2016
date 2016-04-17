@@ -5,21 +5,24 @@ import React, {
   Text,
   View
 } from 'react-native';
-import PageHeader from './pageHeader.ios.js';
-import BottomNav from './bottomNav.ios.js';
-import MatchFound from './matchFoundComp.ios.js';
 
-class MatchView extends Component {
+class MatchFound extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <PageHeader navigator={this.props.navigator} />
-        <Text style={styles.welcome}>
-          MATCH RESULTS
+        <Text style={styles.head}>
+          Hi!
         </Text>
-        <MatchFound />
+        <Text >
+          25/25 items
+        </Text>
+        <Text >
+          2 miles away
+        </Text>
         <View style={styles.bottom}>
-          <BottomNav navigator={this.props.navigator}/>
+          <Text>
+            This text
+          </Text>
         </View>
       </View>
     );
@@ -28,13 +31,16 @@ class MatchView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "#f0f3f5",
+    borderWidth: 1,
+    borderColor: 'grey',
+    width: 250,
+    height: 250,
   },
-  welcome: {
-    fontSize: 20,
-    fontFamily: 'Helvetica Neue',
+  head: {
+    fontSize: 30,
     textAlign: 'center',
     margin: 10,
   },
@@ -45,4 +51,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = MatchView;
+module.exports = MatchFound;
