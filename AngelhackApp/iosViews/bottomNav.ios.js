@@ -11,7 +11,13 @@ class BottomNav extends Component {
   constructor(props) {
     super(props);
     this.onButtonPress = () => {
-      this.props.navigator.pop();
+      console.log("nothing happens?");
+    };
+    this.onHomePress = () => {
+      this.props.navigator.push({name: "HistoryView"});
+    };
+    this.onInventoryPress = () => {
+      this.props.navigator.push({name: "InputView"});
     };
   }
 
@@ -19,20 +25,29 @@ class BottomNav extends Component {
     return (
       <View style={styles.container}>
         <TouchableHighlight style={styles.navButton}
-          onPress={this.onButtonPress}>
+          onPress={this.onHomePress}>
           <View>
-            <Text style={styles.button}>INPUT</Text>
+            <Text style={styles.button}>Home</Text>
           </View>
         </TouchableHighlight>
-        <Text style={styles.welcome}>
-          Wel
-        </Text>
-        <Text style={styles.welcome}>
-          Wel
-        </Text>
-        <Text style={styles.welcome}>
-          Wel
-        </Text>
+        <TouchableHighlight style={styles.navButton}
+          onPress={this.onInventoryPress}>
+          <View>
+            <Text style={styles.button}>Inventory</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.navButton}
+          onPress={this.onButtonPress}>
+          <View>
+            <Text style={styles.button}>Search</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.navButton}
+          onPress={this.onButtonPress}>
+          <View>
+            <Text style={styles.button}>Profile</Text>
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -54,6 +69,9 @@ const styles = StyleSheet.create({
   },
   navButton: {
     flex: 1,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
     borderColor: 'black',
     borderWidth: 1
   }

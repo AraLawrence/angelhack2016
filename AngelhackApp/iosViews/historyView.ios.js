@@ -34,13 +34,6 @@ class HistoryView extends Component {
         <Text style={styles.welcome}>
           HOME
         </Text>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this.onButtonPress}>
-          <View>
-            <Text style={styles.button}>INPUT</Text>
-          </View>
-        </TouchableHighlight>
         <View style={styles.bottom}>
           <BottomNav navigator={this.props.navigator}/>
         </View>
@@ -60,9 +53,6 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica Neue",
     textAlign: 'center',
     margin: 10,
-  },
-  button: {
-      backgroundColor: 'rgba(181, 165, 165, 0.79)'
   },
   bottom: {
     flex: 1,
