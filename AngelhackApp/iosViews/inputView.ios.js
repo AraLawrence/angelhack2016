@@ -36,7 +36,7 @@ class InputView extends Component {
       .then((response) => response.text())
       .then((responseText) => {
         console.log(responseText)
-        this.props.navigator.push('OrderListView')
+        this.props.navigator.push({nane: 'ResultMatchView'})
       })
       .catch((error) => {
         console.warn(error);
@@ -44,6 +44,7 @@ class InputView extends Component {
     };
     this.onMatchPress = () => {
       console.log("nothing here yet");
+      this.props.navigator.push({name: 'MatchView'})
       // API_TODO this button should run the match algorithm and then render the
       // match screen which I have yet to build
     }
