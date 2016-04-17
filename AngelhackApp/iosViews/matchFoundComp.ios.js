@@ -20,9 +20,12 @@ class MatchFound extends Component {
           2 miles away
         </Text>
         <View style={styles.bottom}>
-          <Text>
-            This text
-          </Text>
+          <View style={styles.bottomContainer}>
+            <View style={styles.bottomBox}>
+            </View>
+            <View style={styles.bottomBox}>
+            </View>
+          </View>
         </View>
       </View>
     );
@@ -48,6 +51,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'flex-end'
+  },
+  bottomContainer: {
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+  },
+  bottomBox: {
+    width: 124,
+    height: 40,
+    borderWidth: 1,
+    borderColor: 'grey'
   }
 });
 

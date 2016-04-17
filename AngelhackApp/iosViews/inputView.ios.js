@@ -12,6 +12,7 @@ import HPE_KEY from '../keys/keys.js';
 // TODO don't rerender this everytime
 import PageHeader from './pageHeader.ios.js';
 import BottomNav from './bottomNav.ios.js';
+import ItemAdded from './itemAddedComp.ios.js';
 
 // read image here from imgur upload, later access from camera roll
 var image = "http://i.imgur.com/0Qiy5I7.jpg"
@@ -82,6 +83,7 @@ class InputView extends Component {
             </View>
           </TouchableHighlight>
         </View>
+        <ItemAdded />
         <TouchableHighlight
           style={styles.button}
           onPress={this.onMatchPress}>
