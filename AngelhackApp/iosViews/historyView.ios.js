@@ -14,7 +14,7 @@ class HistoryView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userHistory: '',
+      userHistory: this.props.userHistory ? this.props.userHistory : '',
     };
     this.onButtonPress = () => {
       this.props.navigator.push({name: 'InputView'});

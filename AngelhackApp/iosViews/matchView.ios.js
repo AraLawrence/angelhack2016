@@ -10,6 +10,14 @@ import BottomNav from './bottomNav.ios.js';
 import MatchFound from './matchFoundComp.ios.js';
 
 class MatchView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      place: '',
+      qty: ''
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -17,7 +25,7 @@ class MatchView extends Component {
         <Text style={styles.welcome}>
           MATCH RESULTS
         </Text>
-        <MatchFound />
+        <MatchFound place={this.props.place} qty={this.props.qty}/>
         <View style={styles.bottom}>
           <BottomNav navigator={this.props.navigator}/>
         </View>

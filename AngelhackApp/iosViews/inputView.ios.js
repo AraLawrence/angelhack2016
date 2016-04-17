@@ -22,6 +22,9 @@ class InputView extends Component {
     super(props);
     this.state = {
       upc: '',
+      item: '',
+      place: '',
+      qty: ''
     };
     this.onCameraPress = () => {
       this.props.navigator.push({name: 'CameraView'});
@@ -36,21 +39,23 @@ class InputView extends Component {
 
       let url = `https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1?apikey=${HPE_KEY}&url=${image}`;
 
-      fetch(url)
-      .then((response) => response.text())
-      .then((responseText) => {
-        console.log(responseText)
-        this.props.navigator.push({nane: 'ResultMatchView'})
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+      // fetch(url)
+      // .then((response) => response.text())
+      // .then((responseText) => {
+      //   console.log(responseText)
+      //   this.props.navigator.push({nane: 'ResultMatchView'})
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
+      this.setState({item:"Small bag of Lays bbq potato chips", qty:5})
     };
     this.onMatchPress = () => {
       console.log("nothing here yet");
-      this.props.navigator.push({name: 'MatchView'})
       // API_TODO this button should run the match algorithm and then render the
       // match screen which I have yet to build
+      this.setState({place:"Mary's Place", qty:"20/25"});
+      this.props.navigator.push({name: 'MatchView', place: this.state.place, qty: this.state.qty});
     }
   }
 
@@ -83,7 +88,7 @@ class InputView extends Component {
             </View>
           </TouchableHighlight>
         </View>
-        <ItemAdded />
+        <ItemAdded item={this.state.item} qty={this.state.qty}/>
         <TouchableHighlight
           style={styles.button}
           onPress={this.onMatchPress}>

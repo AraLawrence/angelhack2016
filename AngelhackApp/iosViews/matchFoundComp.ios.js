@@ -14,10 +14,10 @@ class MatchFound extends Component {
           Hi!
         </Text>
         <Text >
-          25/25 items
+          {this.props.place}
         </Text>
         <Text >
-          2 miles away
+          {this.props.qty}
         </Text>
         <View style={styles.bottom}>
           <View style={styles.bottomContainer}>
