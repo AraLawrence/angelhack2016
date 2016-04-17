@@ -21,7 +21,7 @@ class PageHeader extends Component {
         <TouchableHighlight
           onPress={this.onButtonPress}>
           <View>
-            <Text style={styles.button}>Input</Text>
+            <Text style={styles.button}>BACK</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -31,8 +31,9 @@ class PageHeader extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    alignSelf: 'stretch',
     justifyContent: 'center',
+    height: 80,
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -40,6 +41,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+  button: {
+    paddingTop: 12,
+    marginLeft: 20
+  }
 });
 
 module.exports = PageHeader;

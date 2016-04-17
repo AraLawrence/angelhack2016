@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: "#f0f3f5"
   },
   welcome: {
     fontFamily: "Helvetica Neue",

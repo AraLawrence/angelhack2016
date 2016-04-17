@@ -29,7 +29,7 @@ class HistoryView extends Component {
     this.loadHistory();
     return (
       <View style={styles.container}>
-        <PageHeader navigator={navigator}/>
+        <PageHeader navigator={this.props.navigator}/>
         <Text style={styles.welcome}>
           HOME
         </Text>
@@ -37,7 +37,7 @@ class HistoryView extends Component {
           style={styles.button}
           onPress={this.onButtonPress}>
           <View>
-            <Text style={styles.button}>Input</Text>
+            <Text style={styles.button}>INPUT</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -48,9 +48,8 @@ class HistoryView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: "#f0f3f5"
   },
   welcome: {
     fontSize: 20,
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    backgroundColor: 'rgba(181, 165, 165, 0.79)'
+      backgroundColor: 'rgba(181, 165, 165, 0.79)'
   },
 });
 
