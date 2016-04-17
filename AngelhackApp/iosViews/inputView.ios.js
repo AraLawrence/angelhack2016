@@ -9,6 +9,7 @@ import React, {
 } from 'react-native';
 
 import HPE_KEY from '../keys/keys.js';
+var image = require('../assets/sample_upc.jpg');
 
 class InputView extends Component {
   constructor(props) {
@@ -23,12 +24,9 @@ class InputView extends Component {
       this.props.navigator.pop();
     };
     this.onSubmitPress = () => {
-      fetch('https://api.havenondemand.com/1/api/async/recognizebarcodes/v1',
-        {method: "GET",
-        data: {
-          'apikey': HPE_KEY
-        }}
-      )
+      let url = `https://api.havenondemand.com/1/api/async/recognizebarcodes/v1?apikey=${HPE_KEY}&file=${image}`;
+
+      fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
         console.log(responseText);
