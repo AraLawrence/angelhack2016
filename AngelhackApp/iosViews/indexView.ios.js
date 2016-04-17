@@ -20,24 +20,21 @@ class IndexView extends Component {
       this.props.navigator.push({name: 'HistoryView'});
     };
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Match App
-        </Text>
-        <Text style={styles.instructions}>
-          Match App
+          SIGN IN / REGISTER
         </Text>
         <TextInput
-          placeholder="First name"
+          placeholder="FULL NAME"
           style={styles.inputBox}
           onChangeText={(nameText) => this.setState({nameText})}
           value={this.state.nameText}
         />
         <TextInput
-          placeholder="Password"
+          placeholder="EMAIL"
           style={styles.inputBox}
           onChangeText={(emailText) => this.setState({emailText})}
           value={this.state.lastNameText}
@@ -46,7 +43,7 @@ class IndexView extends Component {
           style={styles.button}
           onPress={this.onButtonPress}>
           <View>
-            <Text style={styles.button}>Sign in!</Text>
+            <Text style={styles.buttonText}>LOG IN</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -57,10 +54,13 @@ class IndexView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
+    fontFamily: "Helvetica Neue",
+    fontWeight: 'bold',
+    marginTop: 60,
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
@@ -70,14 +70,27 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   inputBox: {
+    fontFamily: "Helvetica Neue",
     height: 40,
-    width: 200,
-    alignSelf: 'center',
+    fontSize: 14,
+    alignSelf: 'stretch',
     borderWidth: 1,
+    borderColor: 'rgba(181, 165, 165, 0.79)',
+    borderRightColor: '#F5FCFF',
+    borderLeftColor: '#F5FCFF',
   },
   button: {
-    backgroundColor: 'rgba(181, 165, 165, 0.79)'
+    marginTop: 30,
+    backgroundColor: 'black',
+    width: 300,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
+  buttonText: {
+    fontFamily: "Helvetica Neue",
+    color: "#F5FCFF"
+  }
 });
 
 module.exports = IndexView;

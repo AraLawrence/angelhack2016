@@ -6,6 +6,7 @@ import React, {
   TouchableHighlight,
   View
 } from 'react-native';
+import PageHeader from './pageHeader.ios.js';
 
 class HistoryView extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class HistoryView extends Component {
       console.log("loading history");
       // API_TODO this is where we will get the users history and store it in the
       // state variable that I have defined above. We will need to create a Component
-      // for this, which gets loaded on the function call 
+      // for this, which gets loaded on the function call
     }
   }
 
@@ -28,8 +29,9 @@ class HistoryView extends Component {
     this.loadHistory();
     return (
       <View style={styles.container}>
+        <PageHeader navigator={navigator}/>
         <Text style={styles.welcome}>
-          Your History
+          HOME
         </Text>
         <TouchableHighlight
           style={styles.button}
@@ -52,13 +54,9 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    fontFamily: "Helvetica Neue",
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
   button: {
     backgroundColor: 'rgba(181, 165, 165, 0.79)'
