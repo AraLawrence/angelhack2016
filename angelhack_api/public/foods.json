@@ -1,0 +1,16 @@
+{"document":[
+  { 
+  "reference": "1",
+  "title": "Paris",
+  "content":"paris city paname lights france",
+  "booleanrestriction":" \"Paris\" OR \"paname\" OR \"City of Lights\" ",
+  "country":["France"]
+  },
+  { 
+  "reference": "2",
+  "title": "New York",
+  "content":"nyc york apple",
+  "booleanrestriction":" \"New York\" OR \"NYC\" OR \"The Big Apple\" ",
+  "country":["USA"]
+  }
+]}
