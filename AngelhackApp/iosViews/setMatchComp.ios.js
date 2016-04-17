@@ -6,12 +6,12 @@ import React, {
   View
 } from 'react-native';
 
-class ResultMatchView extends Component {
+class SetMatch extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-        MATCH PREFERENCES
+        <Text>
+          Marys Place Feb 15 2016 Completed
         </Text>
       </View>
     );
@@ -20,17 +20,14 @@ class ResultMatchView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "#f0f3f5",
-  },
-  welcome: {
-    fontSize: 20,
-    fontFamily: 'Helvetica Neue',
-    textAlign: 'center',
-    margin: 10,
+    alignSelf: 'stretch',
+    height: 40,
+    backgroundColor: '#F5FCFF',
+    borderWidth: 1,
+    borderColor: 'grey'
   },
 });
 
-module.exports = ResultMatchView;
+module.exports = SetMatch;

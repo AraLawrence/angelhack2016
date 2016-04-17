@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 import PageHeader from './pageHeader.ios.js';
 import BottomNav from './bottomNav.ios.js';
+import SetMatch from './setMatchComp.ios.js';
 
 class HistoryView extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class HistoryView extends Component {
         <Text style={styles.welcome}>
           HOME
         </Text>
+        <SetMatch />
         <View style={styles.bottom}>
           <BottomNav navigator={this.props.navigator}/>
         </View>
