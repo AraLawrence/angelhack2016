@@ -28,6 +28,7 @@ project.xcworkspace
 .gradle
 local.properties
 
+node_modules/
 npm-debug.log
 
 # keys
