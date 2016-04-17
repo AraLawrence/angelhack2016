@@ -3,10 +3,19 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
 class MatchFound extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onSubmitPress = () => {
+      this.props.navigator.push({name: 'HistoryView', placeName: this.props.place, status: "pending"});
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -22,8 +31,15 @@ class MatchFound extends Component {
         <View style={styles.bottom}>
           <View style={styles.bottomContainer}>
             <View style={styles.bottomBox}>
+              <Text>Reject</Text>
             </View>
             <View style={styles.bottomBox}>
+              <TouchableHighlight
+                onPress={this.onSubmitPress}>
+                <View>
+                  <Text>submit</Text>
+                </View>
+              </TouchableHighlight>
             </View>
           </View>
         </View>

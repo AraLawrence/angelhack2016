@@ -19,11 +19,12 @@ import MatchView from './iosViews/matchView.ios.js';
 
 class AngelhackApp extends Component {
   renderScene(route, navigator) {
+
     switch(route.name) {
       case 'LoginScreen':
         return <IndexView navigator={navigator}/>
       case 'HistoryView':
-        return <HistoryView navigator={navigator}/>
+        return <HistoryView navigator={navigator} placeName={route.placeName} status={route.status}/>
       case 'InputView':
         return <InputView navigator={navigator}/>
       case 'CameraView':

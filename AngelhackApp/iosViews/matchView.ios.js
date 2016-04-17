@@ -25,7 +25,7 @@ class MatchView extends Component {
         <Text style={styles.welcome}>
           MATCH RESULTS
         </Text>
-        <MatchFound place={this.props.place} qty={this.props.qty}/>
+        <MatchFound place={this.props.place} qty={this.props.qty} navigator={this.props.navigator}/>
         <View style={styles.bottom}>
           <BottomNav navigator={this.props.navigator}/>
         </View>

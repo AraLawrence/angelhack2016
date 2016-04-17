@@ -11,7 +11,10 @@ class SetMatch extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Marys Place Feb 15 2016 Completed
+          {this.props.placeName}
+        </Text>
+        <Text>
+          {this.props.status}
         </Text>
       </View>
     );

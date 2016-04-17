@@ -13,9 +13,6 @@ import SetMatch from './setMatchComp.ios.js';
 class HistoryView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      userHistory: this.props.userHistory ? this.props.userHistory : '',
-    };
     this.onButtonPress = () => {
       this.props.navigator.push({name: 'InputView'});
     };
@@ -28,19 +25,34 @@ class HistoryView extends Component {
   }
 
   render() {
-    this.loadHistory();
-    return (
-      <View style={styles.container}>
-        <PageHeader navigator={this.props.navigator}/>
-        <Text style={styles.welcome}>
-          HOME
-        </Text>
-        <SetMatch />
-        <View style={styles.bottom}>
-          <BottomNav navigator={this.props.navigator}/>
+    console.log(this.props)
+    if (!this.props.placeName) {
+      return (
+        <View style={styles.container}>
+          <PageHeader navigator={this.props.navigator}/>
+          <Text style={styles.welcome}>
+            HOME
+          </Text>
+          <View style={styles.bottom}>
+            <BottomNav navigator={this.props.navigator}/>
+          </View>
         </View>
-      </View>
-    );
+      );
+    } else {
+      console.log(this.props);
+      return (
+        <View style={styles.container}>
+          <PageHeader navigator={this.props.navigator}/>
+          <Text style={styles.welcome}>
+            HOME
+          </Text>
+          <SetMatch placeName={this.props.placeName} status={this.props.status} />
+          <View style={styles.bottom}>
+            <BottomNav navigator={this.props.navigator}/>
+          </View>
+        </View>
+      );
+    }
   }
 }
 
