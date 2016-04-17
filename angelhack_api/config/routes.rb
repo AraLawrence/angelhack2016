@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'item/scan'  => "item#scan"
+
   post 'user' => 'user#create'
   post 'charity' => 'charity#create'
   post 'company' => 'company#create'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   get 'categorize' => 'categorize#categorize'
   get 'find_matching_charities' => 'find_matching_charities#match'
   get 'seed_db' => 'seed_db#seed'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
