@@ -35,7 +35,7 @@ class AngelhackApp extends Component {
       case 'OrderListView':
         return <OrderListView navigator={navigator}/>
       case 'MatchView':
-        return <MatchView navigator={navigator}/>
+        return <MatchView navigator={navigator} place={route.place} qty={route.qty}/>
 
     }
   }

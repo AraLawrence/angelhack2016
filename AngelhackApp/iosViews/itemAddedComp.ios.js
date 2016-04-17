@@ -9,20 +9,27 @@ import React, {
 
 class ItemAdded extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Image
-          style={styles.icon}
-          source={require('../assets/List_Open_Bullet.png')}
-        />
-        <Text style={styles.text}>
-          Snack size bag of Lays BBQ potato chips
-        </Text>
-        <Text style={styles.rightText}>
-          12
-        </Text>
-      </View>
-    );
+    if (!this.props.item) {
+      return (
+        <View>
+        </View>
+      )
+    } else {
+      return (
+        <View style={styles.container}>
+          <Image
+            style={styles.icon}
+            source={require('../assets/List_Open_Bullet.png')}
+          />
+          <Text style={styles.text}>
+            {this.props.item}
+          </Text>
+          <Text style={styles.rightText}>
+            {this.props.qty}
+          </Text>
+        </View>
+      );
+    }
   }
 }
 
