@@ -8,6 +8,8 @@ import React, {
   View
 } from 'react-native';
 
+import HPE_KEY from '../keys/keys.js';
+
 class InputView extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,19 @@ class InputView extends Component {
       this.props.navigator.pop();
     };
     this.onSubmitPress = () => {
-      let oReq = new XMLHttpRequest();
-      oReq.open("POST", "http://localhost:3000/user/create", true);
-      oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      fetch('https://api.havenondemand.com/1/api/async/recognizebarcodes/v1',
+        {method: "GET",
+        data: {
+          'apikey': HPE_KEY
+        }}
+      )
+      .then((response) => response.text())
+      .then((responseText) => {
+        console.log(responseText);
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
     };
   }
 
