@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'wishlist' => 'wishlist#create'
   post 'wishlist/items' => 'wishlist_item#create'
   get 'categorize' => 'categorize#categorize'
+  get 'orders' => 'order#list'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
